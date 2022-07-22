@@ -1,10 +1,9 @@
 {
   "compilerOptions": {
     "baseUrl": "src",
+    "isolatedModules": false,
     "paths": {
-      "@/*": [
-        "*"
-      ]
+      "@/*": ["*"]
     }
   }
 }

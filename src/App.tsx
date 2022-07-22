@@ -3,7 +3,7 @@ import "./App.less";
 import Router from "./utils/Router";
 import routes from "./router";
 
-import store from "@/store";
+import store from "./store";
 import { Provider } from "react-redux";
 
 const App: React.FC = () => {

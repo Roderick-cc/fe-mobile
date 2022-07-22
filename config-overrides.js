@@ -6,6 +6,7 @@ const {
   addPostcssPlugins,
   addDecoratorsLegacy,
   disableEsLint,
+  fixBabelImports,
 } = require("customize-cra");
 const path = require("path");
 const theme = require("./src/style/theme.jsx");
@@ -38,6 +39,8 @@ const addCustomize = () => (config) => {
   return config;
 };
 
+console.log(" process.env.NODE_ENV", process.env.NODE_ENV);
+
 module.exports = override(
   addLessLoader({
     lessOptions: {
@@ -58,12 +61,19 @@ module.exports = override(
       ])
     : null,
   addDecoratorsLegacy(),
-  disableEsLint(), //忽略eslint警告
+  disableEsLint(),
   addCustomize(),
+
+  // fixBabelImports("import", {
+  //   libraryName: "antd-mobile",
+  //   libraryDirectory: "es/components",
+  //   style: false,
+  // }),
+
   process.env.NODE_ENV === "production"
     ? addWebpackPlugin(
         new BundleAnalyzerPlugin({
-          analyzerMode: "static", //输出静态报告文件report.html，而不是启动一个web服务
+          analyzerMode: "static",
         })
       )
     : undefined

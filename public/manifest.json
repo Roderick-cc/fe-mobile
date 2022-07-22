@@ -1,6 +1,6 @@
 {
-  "short_name": "Telia",
-  "name": "Telia product catalog",
+  "short_name": "x",
+  "name": "x",
   "icons": [
     {
       "src": "teliaicon.ico",
@@ -20,6 +20,6 @@
   ],
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "theme_color": "#F4A600",
+  "background_color": "#F4A600"
 }
